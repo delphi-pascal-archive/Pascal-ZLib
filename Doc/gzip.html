@@ -1,0 +1,175 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+   <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+   <TITLE>DelphiZlib component - TGzip</TITLE>
+   <META NAME="Author" CONTENT="Vincent Nikkelen">
+   <META NAME="Generator" CONTENT="Vim">
+   <META NAME="Description" CONTENT="DelphiZlib is a Delphi component
+                    that adds gzip, gunzip, adler32, crc32 and untar
+		    functionality to your Delphi programs. DelphiZlib
+		    is freeware">
+   <META NAME="KeyWords"
+        CONTENT="delphi, zlib, gzip, gunzip, component, freeware, crc32,
+		 adler32, untar, tar">
+</head>
+
+<body bgcolor="#FFFFFF">
+
+<center><table COLS=1 WIDTH="630">
+<tr>
+<td>
+<center>
+<a href="index.html#components">The components</a>
+- <a href="index.html#Interface">Interface</a>
+- <a href="index.html#Versions">Versions</a>
+- <a href="index.html#future">And in the future..</a>
+- <a href="index.html#Legal">Legal issues</a>
+- <a href="index.html#faq">FAQ</a>
+- <a href="index.html#Download">Download</a>
+<br>
+TGzip
+- <a href="crc32.html">TCrc32</a>
+- <a href="adler32.html">TAdler32</a>
+- <a href="untar.html">TUnTar</a>
+<br>
+<hr WIDTH="100%"></center>
+
+<b><font size="+2">TGzip:</font></b>
+<table BORDER CELLPADDING=4 WIDTH="100%">
+<caption><b><font color="#FF0000" SIZE="+2">Properties</font></b></caption>
+
+<tr BGCOLOR="#CCCCCC">
+<td>About</td>
+
+<td>guess what :-)</td>
+</tr>
+
+<tr>
+<td>Comments</td>
+
+<td>Comments to include into the header of a gzip-file when property GZipHeader
+is properly set.</td>
+</tr>
+
+<tr BGCOLOR="#CCCCCC">
+<td>CompressionLevel&nbsp;</td>
+
+<td>Value from 1-9. A higher level is slower and not necessary better.</td>
+</tr>
+
+<tr>
+<td>CompressionType</td>
+
+<td>Standard, Filtered, HuffmanOnly</td>
+</tr>
+
+<tr BGCOLOR="#CCCCCC">
+<td>DeleteSource</td>
+
+<td>If set the source-file will be deleted after (de)compression. Although
+on UNIX/Linux this is standard behavior I decided to set this to FALSE</td>
+</tr>
+
+<tr>
+<td>FileDestination</td>
+
+<td>File to write the (de)compressed file to</td>
+</tr>
+
+<tr BGCOLOR="#CCCCCC">
+<td>FileSource</td>
+
+<td>File to (de)compress</td>
+</tr>
+
+<tr>
+<td>GzipComments</td>
+
+<td>String containing the comments of a gzipped file after a call of getGzipHeader.</td>
+</tr>
+
+<tr BGCOLOR="#CCCCCC">
+<td>GzipFilename</td>
+
+<td>String containing the filename of a gzipped file after a call of getGzipHeader.</td>
+</tr>
+
+<tr>
+<td>GZipHeader
+<br>&nbsp; - filename
+<br>&nbsp; - comment</td>
+
+<td>Add the original filename (FileSource) and Comments to the header when
+gzipping a file.</td>
+</tr>
+
+<tr BGCOLOR="#CCCCCC">
+<td>Progress</td>
+
+<td>Percentage of data that is already processed.</td>
+</tr>
+
+<tr>
+<td>ProgressStep</td>
+
+<td>Value from 0..100. A value of 11 generates an event when 11%, 22%,
+33%, ... 99%, 100% of the data is processed. 0 disables this event and
+100 only triggers the event when all the data is processed.</td>
+</tr>
+
+<tr BGCOLOR="#CCCCCC">
+<td>WindowOnError</td>
+
+<td>If set, the component will show a message to the user. You can disable
+this and inform (or not) the user the way you want.</td>
+</tr>
+</table>
+
+<p>
+<table BORDER CELLPADDING=4 WIDTH="100%">
+<caption><b><font color="#FF0000" SIZE="+2">Functions</font></b></caption>
+
+<tr BGCOLOR="#CCCCCC">
+<td>Gzip</td>
+
+<td>Start compressing</td>
+</tr>
+
+<tr>
+<td>Gunzip</td>
+
+<td>Start decompressing</td>
+</tr>
+
+<tr BGCOLOR="#CCCCCC">
+<td>fileswitch</td>
+
+<td>Swap the filenames in FileSource and FileDestination</td>
+</tr>
+
+<tr>
+<td>getGzipHeader</td>
+
+<td>Sets GzipFilename and GzipComments to the values from the header of
+FileSource.</td>
+</tr>
+</table>
+
+<p>
+<table BORDER CELLPADDING=4 WIDTH="100%">
+<caption><b><font color="#FF0000" SIZE="+2">Events</font></b></caption>
+
+<tr BGCOLOR="#CCCCCC">
+<td>OnProgress</td>
+
+<td>After completion of ..% (see ProgressStep) this event will be triggered.</td>
+</tr>
+</table>
+
+</td>
+</tr>
+</table>
+</center>
+</body>
+</html>

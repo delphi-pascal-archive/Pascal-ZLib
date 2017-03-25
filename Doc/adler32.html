@@ -1,0 +1,111 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+   <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+   <TITLE>DelphiZlib component - TAdler32</TITLE>
+   <META NAME="Author" CONTENT="Vincent Nikkelen">
+   <META NAME="Generator" CONTENT="Vim">
+   <META NAME="Description" CONTENT="DelphiZlib is a Delphi component
+                    that adds gzip, gunzip, adler32, crc32 and untar
+		    functionality to your Delphi programs. DelphiZlib
+		    is freeware">
+   <META NAME="KeyWords"
+        CONTENT="delphi, zlib, gzip, gunzip, component, freeware, crc32,
+		 adler32, untar, tar">
+</head>
+
+<body bgcolor="#FFFFFF">
+
+<center><table COLS=1 WIDTH="630">
+<tr>
+<td>
+<center>
+<a href="index.html#components">The components</a>
+- <a href="index.html#Interface">Interface</a>
+- <a href="index.html#Versions">Versions</a>
+- <a href="index.html#future">And in the future..</a>
+- <a href="index.html#Legal">Legal issues</a>
+- <a href="index.html#faq">FAQ</a>
+- <a href="index.html#Download">Download</a>
+<br>
+<a href="gzip.html">TGzip</a>
+- <a href="crc32.html">TCrc32</a>
+- TAdler32
+- <a href="untar.html">TUnTar</a>
+<br>
+<hr WIDTH="100%"></center>
+
+<b><font size="+2">TAdler32</font></b>
+<br>&nbsp;
+<table BORDER CELLPADDING=4 WIDTH="100%">
+<caption><b><font color="#FF0000" SIZE="+2">Properties</font></b></caption>
+
+<tr BGCOLOR="#CCCCCC">
+<td>About</td>
+
+<td>guess what :-)</td>
+</tr>
+
+<tr>
+<td>Adler32FileName</td>
+
+<td>Name of the file from which to compute the Adler32 value.</td>
+</tr>
+
+<tr BGCOLOR="#CCCCCC">
+<td>Progress</td>
+
+<td>Percentage of data that is already processed.</td>
+</tr>
+
+<tr>
+<td>ProgressStep</td>
+
+<td>Value from 0..100. A value of 11 generates an event when 11%, 22%,
+33%, ... 99%, 100% of the data is processed. 0 disables this event and
+100 only triggers the event when all the data is processed.</td>
+</tr>
+
+<tr BGCOLOR="#CCCCCC">
+<td>WindowOnError</td>
+
+<td>If set, the component will show a message to the user. You can disable
+this and inform (or not) the user the way you want.</td>
+</tr>
+</table>
+
+<p>
+<table BORDER CELLPADDING=4 WIDTH="100%">
+<caption><b><font color="#FF0000" SIZE="+2">Functions</font></b></caption>
+
+<tr BGCOLOR="#CCCCCC">
+<td>CalcAdler32</td>
+
+<td>Returns the Adler32 value of the file denoted in Adler32FileName.</td>
+</tr>
+
+<tr>
+<td>CalcAdler32_hex</td>
+
+<td>Returns a string representing the hexadecimal Adler32 value of the
+file denoted in Adler32FileName.</td>
+</tr>
+</table>
+
+<p>
+<table BORDER CELLPADDING=4 WIDTH="100%">
+<caption><b><font color="#FF0000" SIZE="+2">Events</font></b></caption>
+
+<tr BGCOLOR="#CCCCCC">
+<td>OnProgress</td>
+
+<td>After completion of ..% (see ProgressStep) this event will be triggered.</td>
+</tr>
+</table>
+
+</td>
+</tr>
+</table>
+</center>
+</body>
+</html>

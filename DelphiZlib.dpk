@@ -1,0 +1,56 @@
+package DelphiZlib;
+
+{$R *.RES}
+{$R 'DelphiZlib.dcr'}
+{$ALIGN ON}
+{$ASSERTIONS ON}
+{$BOOLEVAL OFF}
+{$DEBUGINFO ON}
+{$EXTENDEDSYNTAX ON}
+{$IMPORTEDDATA ON}
+{$IOCHECKS ON}
+{$LOCALSYMBOLS ON}
+{$LONGSTRINGS ON}
+{$OPENSTRINGS ON}
+{$OPTIMIZATION ON}
+{$OVERFLOWCHECKS OFF}
+{$RANGECHECKS OFF}
+{$REFERENCEINFO ON}
+{$SAFEDIVIDE OFF}
+{$STACKFRAMES OFF}
+{$TYPEDADDRESS OFF}
+{$VARSTRINGCHECKS ON}
+{$WRITEABLECONST ON}
+{$MINENUMSIZE 1}
+{$IMAGEBASE $00400000}
+{$DESCRIPTION 'DelphiZlib: TGzip, TCrc32, TAdler32, TUnTar'}
+{$IMPLICITBUILD ON}
+
+requires
+  vcl40,
+  VCLX40;
+
+contains
+  DelphiGzip in 'DelphiGzip.pas',
+  trees in 'Zlib\Trees.pas',
+  Crc in 'Zlib\Crc.pas',
+  zDeflate in 'Zlib\Zdeflate.pas',
+  InfCodes in 'Zlib\infcodes.pas',
+  InfBlock in 'Zlib\infblock.pas',
+  Adler in 'Zlib\Adler.pas',
+  zInflate in 'Zlib\Zinflate.pas',
+  Zlib in 'Zlib\Zlib.pas',
+  InfTrees in 'Zlib\inftrees.pas',
+  infutil in 'Zlib\infutil.pas',
+  InfFast in 'Zlib\inffast.pas',
+  ZUtil in 'Zlib\Zutil.pas',
+  Unzip in 'Zlib\Unzip.pas',
+  ziputils in 'Zlib\Ziputils.pas',
+  Crc_32 in 'Crc_32.pas',
+  utils in 'Other\utils.pas',
+  gzIO in 'Zlib\gzio.pas',
+  Adler_32 in 'Adler_32.pas',
+  UnTar in 'UnTar.pas',
+  tarfile in 'Other\tarfile.pas';
+
+end.

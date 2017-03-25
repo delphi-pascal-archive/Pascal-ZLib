@@ -1,0 +1,250 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+   <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+   <TITLE>DelphiZlib component</TITLE>
+   <META NAME="Author" CONTENT="Vincent Nikkelen">
+   <META NAME="Generator" CONTENT="Vim">
+   <META NAME="Description" CONTENT="DelphiZlib is a Delphi component
+                    that adds gzip, gunzip, adler32, crc32 and untar
+		    functionality to your Delphi programs. DelphiZlib
+		    is freeware">
+   <META NAME="KeyWords"
+        CONTENT="delphi, zlib, gzip, gunzip, component, freeware, crc32,
+		 adler32, untar, tar">
+</head>
+
+<body bgcolor="#FFFFFF">
+<!-- Nedstat komt hier -->
+
+<a NAME="top"></a>
+<center><table COLS=1 WIDTH="630">
+<tr>
+<td>
+<center>
+<a href="#components">The components</a>
+- <a href="#Interface">Interface</a>
+- <a href="#Versions">Versions</a>
+- <a href="#future">And in the future..</a>
+- <a href="#Legal">Legal issues</a>
+- <a href="#faq">FAQ</a>
+- <a href="#Download">Download</a>
+<br>
+<hr WIDTH="100%"></center>
+
+<h1>DelphiZlib 0.2.99</h1>
+
+Yes, this is version 0.2.99. It doesn't mean this component is not
+usable, it means that I'm not sure if I like it the way it works now.
+Until I release version 1.0.0 some property's could change (Of course I
+will keep the newer versions backwards compatible for a while.)
+
+<p>
+Please read the legal notes at the end of this file.
+
+<p>
+DelphiZlib is based on the zlib 1.1.2 general purpose data compression
+library. The <b>original Zlib library</b> can be found on <a
+href="http://www.info-zip.org/pub/infozip/zlib/">
+http://www.info-zip.org/pub/infozip/zlib/</a> The Pascal implementation
+I used is by <b>Jacques Nomssi Nzali</b>.  Because he did such a great
+job, writing this component was easy. I changed only a few bytes in the
+original code in order to avoid some compilation-warnings.  <p>I did
+only include the files I needed for this component. Some of them I
+changed a bit. For the complete and original PASZLIB-code I refer to: <a
+href="http://www.tu-chemnitz.de/~nomssi/paszlib.html">
+http://www.tu-chemnitz.de/~nomssi/paszlib.html</a> Read also <a
+href="paszlib.txt">paszlib.txt</a>, which is in fact the original
+readme.txt by Jacques Nomssi Nzali and contains more information. [And
+yes, I copied some lines from this file]
+
+<p>
+The untar-code is based on <b>extar 1.0</b> made by <b>TapirSoft Gisbert
+W.Selke</b> (feb 1990). The untar code is a quick implementation that might
+not work correctly will all tar-files.
+
+<br>
+<a href="#top">--top--</a>
+<br>
+
+<hr WIDTH="100%">
+
+<h2><a NAME="components"></a>The components</h2>
+The components can be used after installing it the normal way in Delphi
+4. Someone told me it also works for Delphi 5 and I guess it will also
+work for Delphi 3 and would appreciate when somebody can mail me if it
+indeed works. Please ignore the compiler hints. I did not yet clean up
+or optimize the code.
+
+<p>
+To install (Delphi 4):<br>
+Just unpack the zip-file into a directory where you want to keep your
+components. Then choose <b>[File]</b>,<b>[Open]</b> and select the file
+'<b>DelphiZlib.dpk</b>'. In the new window you should choose
+<b>[install]</b>.  The component will be placed under [samples]
+
+<p>
+After installing the component you will need to tell Delphi where it can
+find the files that belong to it. Go to <b>[Tools]</b>, <b>[Environment
+Options]</b>, <b>[Library]</b>, <b>[Library Path]</b>. Add the following
+paths here:
+<ul>
+<li>The path where Delphi can find <i>DelphiZlib.dpk</i> ($PATH)</li>
+<li>$PATH\Zlib</li>
+<li>$PATH\Other</li>
+</ul>
+If somebody knows how I can set this automatic, please let me know.
+
+<p>
+<b>Important if you are upgrading:</b> Please remove the old component
+completely before you install the new one. Make sure there are no old
+files left. Delphi (at least for me) is not always rebuilding components
+in a correct way.
+
+<br><a href="#top">--top--</a>
+<br>
+
+<hr WIDTH="100%">
+
+<h2><a NAME="Interface"></a>Interface</h2>
+
+<A HREF="gzip.html">TGzip</A><br>
+<A HREF="crc32.html">TCrc32</A><br>
+<A HREF="adler32.html">TAdler32</A><br>
+<A HREF="untar.html">TUnTar</A>
+
+<br><a href="#top">--top--</a>
+<br>
+
+<hr WIDTH="100%">
+
+<h2><a NAME="Versions"></a>Versions</h2>
+
+<b>0.2.99:</b>
+<ul>
+<li>Added TUnTar</li>
+<li>Bug-fix in TGzip.gzip. This bug could cause wrong header information
+    in the gzip-ed file. This bug appeared in version 0.2.1</li>
+<li>Small bug-fix in error-message TGzip.gunzip</li>
+</ul>
+
+<b>0.2.2:</b>
+<ul>
+<li>Small bug-fix in getGzipHeader</li>
+</ul>
+
+<b>0.2.1:</b>
+<ul>
+<li>TGzip: Removed path-information from FileSource when storing in
+    gzip-header.</li>
+</ul>
+
+<b>0.2.0:</b>
+<ul>
+<li>Implemented basic header-functionality to TGzip</li>
+<li>Fixed bug in TGzip.gunzip</li>
+</ul>
+
+<b>0.1.0:&nbsp;</b>
+<ul>
+<li>Added TCrc32</li>
+<li>Added TAdler32</li>
+<li>Fixed returning error-value from TGzip</li>
+<li>Added OnProgress-event to TGzip</li>
+<li>Added delphizlib.pkg package</li>
+<li>Renamed project from DelphiGzip to DelphiZlib</li>
+</ul>
+
+<b>0.0.0:</b>
+<ul>
+<li>First public release</li>
+</ul>
+
+<a href="#top">--top--</a>
+
+<hr WIDTH="100%">
+
+<h2><a NAME="future"></a>And in the future..</h2>
+Unfortunately I don't have much time at the moment, so don't expect me
+to fully develop this component into a new WinZip. When I'll have more
+time I'll start writing a TZip component also based on the Zlib library.
+Please let me know if I should add or change something.
+
+<p>
+But first I'll finish the TUnTar component. I'll try to make it in such a
+way that gzipped tar-files can be extracted more efficient.
+
+<br><a href="#top">--top--</a>
+<br>
+<hr WIDTH="100%">
+<h2>
+<a NAME="Legal"></a>Legal issues</h2>
+<PRE>
+Copyright (C) 2000 by Vincent Nikkelen
+
+   This software is provided 'as-is', without any express or implied
+   warranty. In no event will the author be held liable for any damages
+   arising from the use of this software.
+
+   Permission is granted to anyone to use this software for any purpose,
+   including commercial applications, and to alter it and redistribute
+   it freely, subject to the following restrictions:
+
+   1. The origin of this software must not be misrepresented; you must
+      not claim that you wrote the original software. If you use this
+      software in a product, an acknowledgment in the product
+      documentation would be appreciated but is not required.
+   2. Altered source versions must be plainly marked as such, and must
+      not be misrepresented as being the original software.
+   3. This notice may not be removed or altered from any source
+      distribution.
+</PRE>
+
+<br><a href="#top">--top--</a>
+<br>
+<hr WIDTH="100%">
+
+<h2>
+<a NAME="faq"></a>FAQ:</h2>
+<ul>
+<li><b>How can I add multiple files to 1 gzip file?</b><br>
+    You can't. Gzip only compresses 1 file. If you want to compress more
+    files to a single file use e.g. zip.</li>
+<li><b>What is the best way to de-install your component?</b><br>
+    I don't know if this is the best way, but this is the way I do it:
+    Remove the directory where you installed the component, including
+    all .dcu and .bpl files. Start Delphi and when Delphi asks if it
+    should try to load the component next time you start, answer no.
+    This way you're sure there are no old files around when you want to
+    upgrade the component. (Don't forget to remove the library paths if
+    you want to get rid of this component for ever.)</li>
+<li><b>The component does not work, will you implement function x-y-z,
+    how can I...?</b><br>
+    Please check my web-site if there is not a newer version. Some
+    Delphi sites are distributing an old version of my component (Sorry
+    for that, but I have no influence on that except changing the license
+    which I don't want to do.) If this does not solve your question,
+    mail me. Sometimes it will take some time before I react, but I
+    definitely will answer you.</li>
+</ul>
+
+<br><a href="#top">--top--</a>
+<br>
+<hr WIDTH="100%">
+
+<h2>
+<a NAME="Download"></a>Download:</h2>
+DelphiZlib home-page: <a href="http://www.gewis.win.tue.nl/info/delphizlib/">http://www.gewis.win.tue.nl/info/delphizlib/</a>
+<br>Download DelphiZlib: <a href="http://www.gewis.win.tue.nl/info/delphizlib/delphizlib.zip">http://www.gewis.win.tue.nl/info/delphizlib/delphizlib.zip</a> (120 kb)
+<br><a href="#top">--top--</a>
+<br>
+<hr WIDTH="100%">
+<br>Vincent Nikkelen (<a
+href="mailto:vincent@caesar.elte.hu">vincent@caesar.elte.hu</a>)
+Januari 01, 2001</td>
+</tr>
+</table></center>
+
+<!-- Nedstat komt hier -->
+</body>
+</html>

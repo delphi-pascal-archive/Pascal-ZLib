@@ -1,0 +1,170 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+   <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+   <TITLE>DelphiZlib component - TUnTar</TITLE>
+   <META NAME="Author" CONTENT="Vincent Nikkelen">
+   <META NAME="Generator" CONTENT="Vim">
+   <META NAME="Description" CONTENT="DelphiZlib is a Delphi component
+                    that adds gzip, gunzip, adler32, crc32 and untar
+		    functionality to your Delphi programs. DelphiZlib
+		    is freeware">
+   <META NAME="KeyWords"
+        CONTENT="delphi, zlib, gzip, gunzip, component, freeware, crc32,
+		 adler32, untar, tar">
+</head>
+
+<body bgcolor="#FFFFFF">
+
+<center><table COLS=1 WIDTH="630">
+<tr>
+<td>
+<center>
+<a href="index.html#components">The components</a>
+- <a href="index.html#Interface">Interface</a>
+- <a href="index.html#Versions">Versions</a>
+- <a href="index.html#future">And in the future..</a>
+- <a href="index.html#Legal">Legal issues</a>
+- <a href="index.html#faq">FAQ</a>
+- <a href="index.html#Download">Download</a>
+<br>
+<a href="gzip.html">TGzip</a>
+- <a href="crc32.html">TCrc32</a>
+- <a href="adler32.html">TAdler32</a>
+- TUnTar
+<br>
+<hr WIDTH="100%"></center>
+
+<b><font size="+2">TUnTar:</font></b>
+<table BORDER CELLPADDING=4 WIDTH="100%">
+<caption><b><font color="#FF0000" SIZE="+2">Properties</font></b></caption>
+
+<tr BGCOLOR="#CCCCCC">
+<td>About</td>
+<td>guess what :-)</td>
+</tr>
+
+<tr>
+<td>FileSource</td>
+<td>Tarfile that needs to be unpacked. This should be a complete pathname,
+    including the driveletter.</td>
+</tr>
+
+<tr BGCOLOR="#CCCCCC">
+<td>NextFile</td>
+<td>Contains information about the next file to be read in a tar-file. This
+    property is read-only and contains:
+    <ul>
+    <li>name : string;</li>
+    <li>size : integer;</li>
+    <li>timestamp : TDateTime;<br>
+    	where
+	<pre>
+	type TDateTime = record
+	          sec : integer;
+		  min : integer;
+		  hour : integer;
+		  day : integer;
+		  month : integer;
+		  year : integer;
+	     end;
+	</pre></li>
+    </ul></td>
+</tr>
+
+<tr>
+<td>OverwriteMode</td>
+<td>Contains information about what should be done when a file that is going
+    to be unpacked already exist. Note that on UNIX systems filename are
+    case-sensitive. There are the following options (<b>TOverwriteMode</b>):
+    <ul>
+    <li>omRename
+    <li>omReplace
+    <li>omSkip
+    </ul>
+</td>
+</tr>
+
+<tr BGCOLOR="#CCCCCC">
+<td>OverwriteThisTime</td>
+<td>Same as <i>OverwriteMode</i>, but only influences behavior immediately
+    after an <i>OnExtractOverwrite</i> event.
+</tr>
+
+<tr>
+<td>OverwriteFilename</td>
+<td>New filename for the file that already existed. Filename must be
+    including pathname and driveletter.</td>
+</tr>
+
+<tr BGCOLOR="#CCCCCC">
+<td>Progress</td>
+<td>Percentage of data that is already processed.</td>
+</tr>
+
+<tr>
+<td>ProgressStep</td>
+<td>Value from 0..100. A value of 11 generates an event when 11%, 22%,
+    33%, ... 99%, 100% of the data is processed. 0 disables this event and
+    100 only triggers the event when all the data is processed.</td>
+</tr>
+
+<tr BGCOLOR="#CCCCCC">
+<td>UnpackPath</td>
+<td>Path where to unpack the tar-file. This should be a complete path,
+    including the driveletter. If the path does not exist it will be
+    created.</td>
+</tr>
+
+</table>
+
+<p>
+<table BORDER CELLPADDING=4 WIDTH="100%">
+<caption><b><font color="#FF0000" SIZE="+2">Functions</font></b></caption>
+
+<tr BGCOLOR="#CCCCCC">
+<td>GetInfo</td>
+<td>Get information about the files in the tar-file denoted by
+    <i>FileSource</i> After every file an event (see <i>OnNextFile</i>)
+    will be generated and the information can be found in <i>NextFile</i>.
+    </td>
+</tr>
+
+<tr>
+<td>UnTar</td>
+<td>Start extracting files from tar-file denoted by <i>FileSource</i></td>
+</tr>
+
+</table>
+
+<p>
+<table BORDER CELLPADDING=4 WIDTH="100%">
+<caption><b><font color="#FF0000" SIZE="+2">Events</font></b></caption>
+
+<tr BGCOLOR="#CCCCCC">
+<td>OnExtractOverwrite</td>
+<td>This event will be triggered when <i>OverwriteMode = omRename</i> and the
+    file to be extracted already exists.</td>
+</tr>
+
+<tr>
+<td>OnNextFile</td>
+<td>When a new file is reached in the specified tar-file, this event will
+    be triggered and information about the reached file can be found in
+    <i>NextFile</i></td>
+</tr>
+
+<tr BGCOLOR="#CCCCCC">
+<td>OnProgress</td>
+<td>After completion of ..% (see ProgressStep) this event will be
+    triggered.</td>
+</tr>
+
+</table>
+
+</td>
+</tr>
+</table>
+</center>
+</body>
+</html>
